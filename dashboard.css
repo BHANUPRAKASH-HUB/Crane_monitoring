@@ -1,0 +1,98 @@
+/* 🎨 Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; overflow: hidden; }
+
+/* 🚨 Top Navigation */
+.top-nav {
+    position: fixed; top: 0; left: 0; right: 0; height: 60px; background-color: #222;
+    color: white; display: flex; justify-content: space-between; align-items: center;
+    padding: 0 20px; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.top-nav h2 { font-size: 1.5rem; }
+.highlight { color: #ffcc00; }
+.notification-icon { font-size: 1.7rem; color: #ffcc00; cursor: pointer; }
+
+/* 📚 Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #14141b;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 15px 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li.active, 
+.sidebar ul li:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.sidebar ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 📊 Main Content */
+.main-content {
+    flex: 1; padding: 80px 30px; overflow-y: auto; background-color: #f4f4f4;
+}
+.summary { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.card {
+    flex: 1; min-width: 180px; background-color: #fff; padding: 18px; border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; font-weight: bold;
+    transition: background-color 0.5s ease; /* Smooth color transition */
+}
+.card span { display: block; font-size: 1.4rem; margin-top: 10px; }
+
+/* 📈 Charts (2 per row) */
+.charts {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px; margin-top: 30px;
+}
+.chart-item canvas {
+    width: 100% !important; height: 300px !important; background-color: #fff;
+    padding: 10px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 📝 Notification Panel (Fixed Right) */
+.notification-panel {
+    position: fixed; top: 60px; right: -350px; width: 300px; height: calc(100% - 60px);
+    background-color: #fff; box-shadow: -2px 0 10px rgba(0,0,0,0.1); padding: 20px;
+    transition: right 0.3s ease; overflow-y: auto; z-index: 90;
+}
+.notification-panel.open { right: 0; } /* 👈 Slide-in Effect */
+.notification-panel h3 { margin-bottom: 15px; font-size: 1.3rem; color: #ffcc00; }
+.notification-panel ul li {
+    padding: 10px; border-bottom: 1px solid #ddd; font-size: 0.95rem;
+}
+
+/* 🚨 Notification Slide-In Effect */
+.notification {
+    position: relative;
+    right: -100%;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    0% { right: -100%; opacity: 0; }
+    100% { right: 0; opacity: 1; }
+}
+
+/* ⚡ Responsive */
+@media (max-width: 768px) {
+    .charts { grid-template-columns: 1fr; } /* Single column for mobile */
+}  

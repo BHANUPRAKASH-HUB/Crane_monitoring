@@ -1,0 +1,205 @@
+/* 🎨 Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+/* 🌟 Wrapper for Layout Fix */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* 🚨 Top Navigation */
+.top-nav {
+    position: fixed; 
+    top: 0; left: 0; right: 0; 
+    height: 60px; 
+    background-color: #222;
+    color: white; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px; 
+    z-index: 100; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.top-nav h2 { font-size: 1.5rem; }
+.highlight { color: #ffcc00; }
+
+/* 📚 Sidebar */
+.sidebar {
+    width: 220px; 
+    background-color: #14141b; 
+    padding-top: 80px; 
+    min-height: 100vh;
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    overflow-y: auto;
+}
+.sidebar ul { list-style: none; }
+.sidebar ul li {
+    padding: 15px 25px; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px;
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background 0.3s ease;
+}
+.sidebar ul li.active, 
+.sidebar ul li:hover { background-color: #ffcc00; color: black; }
+.sidebar ul li a { color: inherit; text-decoration: none; }
+
+/* ⚡ Main Content */
+.main-content {
+    flex-grow: 1; /* Pushes footer to the bottom */
+    overflow-y: auto;
+    min-height: calc(100vh - 60px); /* Ensures it fills available space */
+    padding: 80px 30px; 
+    margin-left: 220px; /* Keeps sidebar space */
+}
+.main-content h3 {
+    font-size: 1.8rem; 
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+/* 🌟 Metric Cards Row */
+.metrics {
+    display: flex;
+    justify-content: center; /* Centering the cards */
+    align-items: center;
+    gap: 20px; /* Spacing between cards */
+    flex-wrap: nowrap; /* Ensures they stay in a single row */
+    margin-top: 20px;
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+    padding: 10px;
+}
+
+/* 🌟 Metric Card Styling */
+.metric-card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 200px;
+    transition: background-color 0.5s ease, color 0.3s ease;
+    background-color: white; /* Default color */
+}
+
+/* 🟢🔴🟡 Dynamic Background Colors for Different Parameter Values */
+.metric-card.good { background-color: #28a745; color: #fff; }  /* Green */
+.metric-card.warning { background-color: #ffc107; color: #000; } /* Yellow */
+.metric-card.danger { background-color: #ff3030; color: #fff; }  /* Red */
+
+/* 📱 Responsive - Allow Wrapping on Small Screens */
+@media (max-width: 768px) {
+    .metrics {
+        flex-wrap: wrap; /* Allows wrapping on small screens */
+        justify-content: center;
+    }
+}
+
+/* 📈 Charts */
+.charts {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; 
+    margin-top: 30px;
+}
+.chart-item {
+    background-color: white;
+    padding: 20px; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+canvas {
+    width: 100% !important;
+    height: 350px !important;
+}
+
+.footer {
+    width: calc(100% - 220px);
+    max-width: 100%;
+    height: 40px;
+    background-color: #222;
+    color: #ffcc00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: -100px; /* Initially hidden */
+    right: 0;
+    transition: bottom 0.3s ease-in-out;
+}
+
+/* 🌐 Social Media Icons */
+.footer .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* 🏳️ Default Icon Style (Muted) */
+.footer .social-icons a {
+    color: #ffffff; /* Muted gray */
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* 🎬 YouTube */
+.footer .social-icons .youtube:hover {
+    color: #FF0000; /* YouTube Red */
+}
+
+/* 📘 Facebook */
+.footer .social-icons .facebook:hover {
+    color: #1877F2; /* Facebook Blue */
+}
+
+/* 🐦 Twitter */
+.footer .social-icons .twitter:hover {
+    color: #1DA1F2; /* Twitter Blue */
+}
+
+/* 📸 Instagram */
+.footer .social-icons .instagram:hover {
+    color: #E4405F; /* Instagram Gradient Color */
+}
+
+/* 💼 LinkedIn */
+.footer .social-icons .linkedin:hover {
+    color: #0077B5; /* LinkedIn Blue */
+}
+
+/* 🔍 Hover Zoom Effect */
+.footer .social-icons a:hover {
+    transform: scale(1.1);
+}
+
+/* 📱 Responsive Fix */
+@media (max-width: 768px) {
+    .footer {
+        width: 100%;
+        right: 0;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 10px 0;
+    }
+    .footer .social-icons {
+        margin-top: 5px;
+    }
+}

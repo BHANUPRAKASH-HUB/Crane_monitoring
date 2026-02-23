@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical & Energy - Crane Monitoring | STRIVERS</title>
+    <link rel="stylesheet" href="/d.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- 🚨 Top Navigation -->
+    <header class="top-nav">
+        <h2><span class="highlight">ST</span>RIVERS</h2>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- 📚 Sidebar with Icons -->
+        <aside class="sidebar">
+            <ul>
+                <li><i class="fas fa-tachometer-alt"></i> <a href="dashboard.html">Dashboard</a></li>
+                <li><i class="fas fa-exclamation-triangle"></i> <a href="alerts.html">Alerts</a></li>
+                <li class="active"><i class="fas fa-bolt"></i> Electrical & Energy</li>
+                <li><i class="fas fa-chart-line"></i> <a href="reports.html">Reports</a></li>
+                <li><i class="fas fa-cog"></i> <a href="settings.html">Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- ⚡ Main Content for Electrical & Energy -->
+        <main class="main-content">
+            <h3><i class="fas fa-plug"></i> Electrical & Energy Monitoring</h3>
+
+            <section class="metrics">
+                <div class="metric-card">
+                    <h4>Current Level</h4>
+                    <p id="current">loading...</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Voltage Level</h4>
+                    <p id="voltage">loading...</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Power Factor</h4>
+                    <p id="power-factor">loading...</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Battery Health</h4>
+                    <p id="battery">loading...</p>
+                </div>
+            </section>
+
+            <section class="charts">
+                <div class="chart-item">
+                    <canvas id="currentVoltageChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <canvas id="powerFactorChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <canvas id="batteryHealthChart"></canvas>
+                </div>
+                <div class="chart-item">
+                    <canvas id="energyConsumptionChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <span>© 2025 THE STRIVERS | All Rights Reserved</span>
+        <div class="social-icons">
+            <a href="#" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+    
+
+    <script src="/d.js"></script>
+</body>
+</html>

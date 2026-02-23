@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts - Crane Monitoring System | STRIVERS</title>
+    <link rel="stylesheet" href="alerts.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 🚨 Top Navigation -->
+    <header class="top-nav">
+        <h2><span class="highlight">ST</span>RIVERS</h2>
+    </header>
+
+    <!-- 📚 Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><i class="fas fa-tachometer-alt"></i> <a href="dashboard.html">Dashboard</a></li>
+            <li class="active"><i class="fas fa-exclamation-triangle"></i> Alerts</li>
+            <li><i class="fas fa-bolt"></i> <a href="electrical.html">Electrical & Energy</a></li>
+            <li><i class="fas fa-chart-line"></i> <a href="reports.html">Reports</a></li>
+            <li><i class="fas fa-cog"></i> <a href="settings.html">Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- 🔔 Main Content -->
+    <main class="alerts-content">
+        <h3><i class="fas fa-bell"></i> Alerts</h3>
+
+        <!-- 📅 Date Picker -->
+        <div class="date-picker">
+            <label for="alert-date"><i class="fas fa-calendar-alt"></i> Select Date:</label>
+            <input type="date" id="alert-date" onchange="loadAlerts()">
+        </div>
+
+        <!-- 🚨 Alerts Container -->
+        <div id="alerts-container"></div>
+
+        <!-- 🚨 Today's Alerts (Moved Below) -->
+        <section class="today-alerts">
+            <h4>📢 Today's Alerts</h4>
+            <div id="today-alerts"></div>
+        </section>
+    </main>
+
+    <script>
+        function loadAlerts() {
+            const todayAlertsContainer = document.getElementById("today-alerts");
+            todayAlertsContainer.innerHTML = ""; // Clear previous alerts
+        
+            // Get Notifications from localStorage
+            let notifications = JSON.parse(localStorage.getItem("notifications")) || [];
+        
+            if (notifications.length === 0) {
+                todayAlertsContainer.innerHTML = `<p>No alerts recorded.</p>`;
+                return;
+            }
+        
+            // Display Each Alert
+            notifications.forEach(alert => {
+                const alertCard = document.createElement("div");
+                alertCard.classList.add("alert-card");
+        
+                alertCard.innerHTML = `
+                    <div class="alert-icon ${alert.type}">
+                        <i class="fas ${alert.type === "critical" ? "fa-exclamation-triangle" : "fa-info-circle"}"></i>
+                    </div>
+                    <div class="alert-text">
+                        <h4>${alert.message}</h4>
+                        <p>${alert.timestamp}</p>
+                    </div>
+                `;
+                todayAlertsContainer.appendChild(alertCard);
+            });
+        }
+        
+        // Load alerts when the page is loaded
+        window.onload = loadAlerts;
+        
+        
+    </script>
+</body>
+</html>

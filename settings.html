@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - STRIVERS</title>
+    <link rel="stylesheet" href="settings.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 🚨 Top Navigation -->
+    <header class="top-nav">
+        <h2><span class="highlight">ST</span>RIVERS</h2>
+        <div class="notification-icon" id="notificationToggle">
+            <i class="fas fa-bell"></i>
+        </div>
+    </header>
+
+    <!-- 📚 Fixed Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><i class="fas fa-tachometer-alt"></i> <a href="dashboard.html">Dashboard</a></li>
+            <li><i class="fas fa-exclamation-triangle"></i> <a href="alerts.html">Alerts</a></li>
+            <li><i class="fas fa-bolt"></i> <a href="electrical.html">Electrical & Energy</a></li>
+            <li><i class="fas fa-file-alt"></i> <a href="reports.html">Reports</a></li>
+            <li class="active"><i class="fas fa-cog"></i> Settings</li>
+        </ul>
+    </aside>
+
+    <!-- ⚙️ Main Content - Settings Section -->
+    <main class="main-content">
+        <h3><i class="fas fa-cog"></i> Settings</h3>
+        
+        <!-- 🔧 Profile Settings -->
+        <section class="settings-section">
+            <h4>👤 Profile Settings</h4>
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <button class="save-btn">Save Changes</button>
+            </div>
+        </section>
+
+        <!-- 🔔 Notification Preferences -->
+        <section class="settings-section">
+            <h4>🔔 Notification Preferences</h4>
+            <label><input type="checkbox" checked> Email Notifications</label>
+            <label><input type="checkbox"> SMS Alerts</label>
+            <label><input type="checkbox" checked> System Alerts</label>
+        </section>
+
+        <!-- 🎨 Theme Customization -->
+        <section class="settings-section">
+            <h4>🎨 Theme</h4>
+            <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+        </section>
+
+        <!-- 🛡️ Security Settings -->
+        <section class="settings-section">
+            <h4>🛡️ Security</h4>
+            <div class="form-group">
+                <label>Change Password:</label>
+                <input type="password" placeholder="New Password">
+                <input type="password" placeholder="Confirm Password">
+                <button class="save-btn">Update Password</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* 🎨 Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { display: flex; height: 100vh; overflow: hidden; background-color: #f4f4f4; }
+
+/* 🚨 Top Navigation */
+.top-nav {
+    position: fixed; top: 0; left: 0; right: 0; height: 60px; background-color: #222;
+    color: white; display: flex; justify-content: space-between; align-items: center;
+    padding: 0 20px; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.top-nav h2 { font-size: 1.5rem; }
+.highlight { color: #ffcc00; }
+
+/* 📚 Sidebar */
+.sidebar {
+    width: 220px; background-color: #14141b; padding-top: 80px;
+    height: 100vh; position: fixed; top: 0; left: 0; overflow-y: auto;
+}
+.sidebar ul { list-style: none; }
+.sidebar ul li {
+    padding: 15px 25px; color: white; display: flex; align-items: center;
+    gap: 10px; font-size: 1rem; cursor: pointer; transition: background 0.3s ease;
+}
+.sidebar ul li.active, .sidebar ul li:hover {
+    background-color: #ffcc00; color: black;
+}
+.sidebar ul li a { color: inherit; text-decoration: none; }
+
+/* 🔔 Main Content */
+.alerts-content {
+    margin-left: 220px; padding: 100px 30px 30px 30px;
+    width: calc(100% - 220px); overflow-y: auto; height: 100vh;
+}
+
+/* 📅 Date Picker */
+.date-picker {
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+}
+.date-picker label {
+    font-size: 1.1rem; color: #333;
+}
+.date-picker input {
+    padding: 8px; font-size: 1rem;
+    border: 1px solid #ccc; border-radius: 5px;
+}
+
+/* 🚨 Alert Cards */
+.alert-card {
+    background-color: white; padding: 20px; border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 15px; transition: transform 0.2s;
+}
+.alert-card:hover { transform: translateY(-3px); }
+
+.alert-icon {
+    font-size: 1.8rem; width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: white;
+}
+
+/* 🛑 Severity Levels */
+.critical { background-color: #e74c3c; } /* Red */
+.warning { background-color: #f1c40f; } /* Yellow */
+.info { background-color: #3498db; } /* Blue */
+
+/* 📜 Alert Text */
+.alert-text { flex: 1; }
+.alert-text h4 { font-size: 1.2rem; color: #333; margin-bottom: 5px; }
+.alert-text p { font-size: 0.9rem; color: #666; }
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .alerts-content { margin-left: 0; padding: 80px 15px; width: 100%; }
+    .sidebar { display: none;
+    
+    }
+}

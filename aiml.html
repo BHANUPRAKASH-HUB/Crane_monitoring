@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crane Monitoring System</title>
+    <link rel="stylesheet" href="aiml.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.2.8/mqtt.min.js"></script>
+
+</head>
+<body>
+
+    <!-- 🚨 Top Navigation with Bell Icon -->
+    <header class="top-nav">
+        <h2><span class="highlight">ST</span>RIVERS</h2>
+        <div class="notification-icon" id="notificationToggle">
+            <i class="fas fa-bell"></i> <!-- 🔔 Bell Icon -->
+        </div>
+    </header>
+
+    <!-- 📌 Notification Sidebar -->
+    <div id="notificationPanel" class="notification-panel">
+        <h4>Notifications</h4>
+        <div id="notificationList"></div> <!-- Notifications appear here -->
+    </div>
+
+    <div class="container">
+        <!-- 📚 Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li class="active"><i class="fas fa-tachometer-alt"></i> <a href="dashboard.html">Dashboard</a></li>
+                <li><i class="fas fa-exclamation-triangle"></i><a href="alerts.html"> Alerts</a></li>
+                <li><i class="fas fa-bolt"></i> <a href="electrical.html">Electrical & Energy</a></li>
+                <li><i class="fas fa-chart-line"></i> <a href="reports.html">Reports</a></li>
+                <li><i class="fas fa-cog"></i> <a href="settings.html">Settings</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <!-- Sensor Data Display -->
+            <div class="sensor-data">
+                <div class="data-box"><strong>Temperature</strong><p><span id="temperature">Loading...</span> °C</p></div>
+                <div class="data-box"><strong>Fuel Level</strong><p><span id="fuelLevel">Loading...</span> %</p></div>
+                <div class="data-box"><strong>Vibration</strong><p><span id="vibration">Loading...</span> m/s²</p></div>
+                <div class="data-box"><strong>Operation Hours</strong><p><span id="operationHours">Loading...</span> hrs</p></div> <!-- Changed -->
+            </div>
+
+            <!-- 📈 Graphs Container -->
+            <div class="result-container">
+                <div class="chart-box"><canvas id="vibrationGraph"></canvas></div>
+                <div class="chart-box"><canvas id="temperatureGraph"></canvas></div>
+                <div class="chart-box"><canvas id="fuelGraph"></canvas></div>
+                <div class="chart-box"><canvas id="operationHoursGraph"></canvas></div> <!-- Changed -->
+            </div>
+        </main>
+    </div>
+
+    <script src="aiml.js"></script>
+</body>
+</html>

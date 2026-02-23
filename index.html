@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRIVERS - Crane Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.getElementById("getStarted").addEventListener("click", function() {
+        window.location.href = "dashboard.html";
+    });
+    </script>
+</head>
+<body>
+    <!-- Header: STRIVERS -->
+    <header class="header-title">
+        <h1><span class="st-color">ST</span><span class="rivers-color">RIVERS</span></h1>
+    </header>
+
+    <!-- Background with Blur -->
+    <div class="background-container">
+        <div class="overlay"></div>
+        <div class="content-container">
+            <!-- Left Section: Content + Get Started Button -->
+            <div class="left-section">
+                <h2 class="text-animate">Welcome to Crane Monitoring System</h2>
+                <p class="text-animate-delay">Monitor crane operations in real-time, analyze performance, and ensure safety with precision.</p>
+                <a href="dashboard.html"><button id="getStarted" class="btn-animated">Get Started </button></a>
+            </div>
+
+            <!-- Right Section: Features with Icons & Animation -->
+            <div class="right-section">
+                <h3 class="feature-heading text-animate">Key Features</h3>
+                <div class="feature-item text-animate-delay">
+                    <span>📡</span>
+                    <div>
+                        <h4>Real-Time Monitoring</h4>
+                        <p>Track load, speed, and angle instantly for efficient operations.</p>
+                    </div>
+                </div>
+                <div class="feature-item text-animate-delay">
+                    <span>⚡</span>
+                    <div>
+                        <h4>Instant Alerts</h4>
+                        <p>Receive real-time notifications to avoid operational hazards.</p>
+                    </div>
+                </div>
+                <div class="feature-item text-animate-delay">
+                    <span>📊</span>
+                    <div>
+                        <h4>Performance Insights</h4>
+                        <p>Visualize crane usage data to improve performance metrics.</p>
+                    </div>
+                </div>
+                <div class="feature-item text-animate-delay">
+                    <span>🔒</span>
+                    <div>
+                        <h4>Secure Access</h4>
+                        <p>Ensure secure handling of operational data with encryption.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

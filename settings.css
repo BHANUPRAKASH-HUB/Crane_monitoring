@@ -1,0 +1,58 @@
+/* 🎨 Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; overflow: hidden; }
+
+/* 🚨 Top Navigation */
+.top-nav {
+    position: fixed; top: 0; left: 0; right: 0; height: 60px; background-color: #222;
+    color: white; display: flex; justify-content: space-between; align-items: center;
+    padding: 0 20px; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.top-nav h2 .highlight { color: #ffcc00; }
+.notification-icon { font-size: 1.7rem; color: #ffcc00; cursor: pointer; }
+
+/* 📚 Fixed Sidebar */
+.sidebar {
+    width: 220px; background-color: #14141b; padding-top: 80px; height: 100vh;
+    position: fixed; top: 0; left: 0; overflow-y: auto;
+}
+
+.sidebar ul { list-style: none; }
+.sidebar ul li {
+    padding: 15px 25px; color: white; display: flex; align-items: center;
+    gap: 10px; font-size: 1rem; cursor: pointer; transition: background 0.3s ease;
+}
+.sidebar ul li.active, .sidebar ul li:hover {
+    background-color: #ffcc00; color: black;
+}
+.sidebar ul li a { color: inherit; text-decoration: none; }
+
+/* ⚙️ Main Content */
+.main-content {
+    flex-grow: 1; margin-left: 220px; padding: 100px 30px;
+    overflow-y: auto; height: 100vh;
+}
+.main-content h3 {
+    font-size: 1.8rem; color: #333; display: flex; align-items: center; gap: 10px;
+}
+
+/* 🔧 Settings Sections */
+.settings-section {
+    background-color: white; padding: 25px; margin-bottom: 30px; border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.settings-section h4 {
+    font-size: 1.4rem; color: #222; margin-bottom: 20px;
+}
+.form-group {
+    display: flex; flex-direction: column; gap: 15px;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px; border: 1px solid #ddd; border-radius: 5px; width: 100%;
+}
+.save-btn, .theme-toggle {
+    background-color: #ffcc00; border: none; padding: 10px 20px;
+    border-radius: 5px; cursor: pointer; font-size: 1rem; transition: 0.3s ease;
+}
+.save-btn:hover, .theme-toggle:hover { background-color: #e6b800; }
+label { display: block; margin: 10px 0; font-size: 1rem; }

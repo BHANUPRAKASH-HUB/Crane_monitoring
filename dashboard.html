@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crane Monitoring Dashboard - STRIVERS</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 🚨 Top Navigation with Bell Icon -->
+    <header class="top-nav">
+        <h2><span class="highlight">ST</span>RIVERS</h2>
+        <div class="notification-icon" id="notificationToggle">
+            <i class="fas fa-bell">🔔</i> <!-- 🔔 Bell Icon -->
+        </div>
+    </header>
+
+    <!-- 📚 Sidebar with Icons -->
+    <aside class="sidebar">
+        <ul>
+            <li class="active"><i class="fas fa-tachometer-alt"></i> <a href="dashboard.html">Dashboard</a></li>
+            <li><i class="fas fa-exclamation-triangle"></i><a href="alerts.html"> Alerts</a></li>
+            <li><i class="fas fa-bolt"></i> <a href="electrical.html">Electrical & Energy</a></li>
+            <li><i class="fas fa-chart-line"></i> <a href="reports.html">Reports</a></li>
+            <li><i class="fas fa-cog"></i> <a href="settings.html">Settings</a></li>
+        </ul>
+    </aside>
+
+        <!-- 📊 Summary Section with IDs -->
+<main class="main-content">
+    <section class="summary">
+        <div class="card" id="vibration-card">Vibration Levels: <span id="vibration"> mm/s</span></div>
+        <div class="card" id="fuel-card">Fuel Consumption: <span id="fuel">L/hr</span></div>
+        <div class="card" id="hours-card">Operating Hours: <span id="hours">hrs</span></div>
+        <div class="card" id="temperature-card">Temperature: <span id="temperature">°C</span></div>
+    </section>
+
+        <section class="charts">
+            <div class="chart-item"><canvas id="speedChart"></canvas></div>
+            <div class="chart-item"><canvas id="loadChart"></canvas></div>
+            <div class="chart-item"><canvas id="temperatureChart"></canvas></div>
+            <div class="chart-item"><canvas id="batteryChart"></canvas></div>
+            <div class="chart-item"><canvas id="safetyPieChart"></canvas></div>
+            <div class="chart-item"><canvas id="energyPieChart"></canvas></div>
+        </section>
+        <!-- 🔔 Notification Panel -->
+<div id="notification-panel" class="notification-panel">
+    <h3>Alerts</h3>
+    <ul id="notifications-list"></ul>
+</div>
+
+    </main>
+
+
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

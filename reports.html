@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crane Reports - STRIVERS</title>
+    <link rel="stylesheet" href="reports.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="charts.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+    <!-- 🚨 Top Navigation -->
+    <header class="top-nav">
+        <h2><span class="highlight">ST</span>RIVERS</h2>
+    </header>
+
+    <!-- 📚 Sidebar with Icons -->
+    <aside class="sidebar">
+        <ul>
+            <li><i class="fas fa-tachometer-alt"></i> <a href="dashboard.html">Dashboard</a></li>
+            <li><i class="fas fa-exclamation-triangle"></i> <a href="alerts.html">Alerts</a></li>
+            <li><i class="fas fa-bolt"></i> <a href="electrical.html">Electrical & Energy</a></li>
+            <li class="active"><i class="fas fa-file-alt"></i> Reports</li>
+            <li><i class="fas fa-cog"></i> <a href="settings.html">Settings</a></li>
+        </ul>
+    </aside>
+
+    <!-- 📜 Main Content: Reports Section -->
+    <main class="main-content">
+        <h3><i class="fas fa-file-alt"></i> Crane Performance Reports</h3>
+
+        <!-- 🕒 Date and Time Filter Section -->
+        <section class="filters">
+            <div class="filter-group">
+                <label for="reportDate">📅 Select Date:</label>
+                <input type="date" id="reportDate">
+            </div>
+
+            <div class="filter-group">
+                <label for="startTime">⏳ Start Time:</label>
+                <input type="time" id="startTime">
+            </div>
+
+            <div class="filter-group">
+                <label for="endTime">⏳ End Time:</label>
+                <input type="time" id="endTime">
+            </div>
+
+            <div class="button-group">
+                <button onclick="filterReports()">🔍 Show Report</button>
+                <button onclick="downloadCSV()">📥 Download CSV</button>
+            </div>
+        </section>
+
+        <!-- 📝 Reports Table -->
+        <section class="report-table">
+            <h4>📄 Crane Parameters</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Temperature (°C)</th>
+                        <th>Fuel Level (%)</th>
+                        <th>Vibration (m/s²)</th>
+                        <th>Operation Hours (hrs)</th>
+                    </tr>
+                </thead>
+                <tbody id="reportTableBody">
+                    <!-- Data rows will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 📊 Charts for Performance Trends -->
+        <section class="charts">
+            <div class="chart-container">
+                <h4>📈 Temperature Trend</h4>
+                <canvas id="temperatureTrend"></canvas>
+            </div>
+            <div class="chart-container">
+                <h4>⛽ Fuel Level Trend</h4>
+                <canvas id="fuelLevelTrend"></canvas>
+            </div>
+        </section>
+        <!-- 🦶 Footer -->
+    <footer class="footer">
+        <span>© 2025 THE STRIVERS | All Rights Reserved</span>
+        <div class="social-icons">
+            <a href="#" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+    </main>
+
+    <script src="reports.js"></script>
+</body>
+</html>
